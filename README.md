@@ -1,5 +1,3 @@
-
-```markdown
 # 🐾 Critter Quest  
 A cute creature-command 2D puzzle game built in Unity  
 
@@ -122,4 +120,3 @@ This project is for educational and non-commercial use.
 All assets used are either self-made or from free sources.
 
 ---
-```
