@@ -1,6 +1,11 @@
 using UnityEngine;
 
-
+/*
+---------------------------------------
+PlayerController.cs
+ Handles player movement and input.
+--------------------------------------- 
+*/
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {

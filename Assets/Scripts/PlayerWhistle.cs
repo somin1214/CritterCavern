@@ -1,11 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+---------------------------------------
+PlayerWhistle.cs
+Handles player whistle input and notifies critters within range.
+--------------------------------------- 
+*/
 public class PlayerWhistle : MonoBehaviour
 {
     [Header("Whistle Settings")]
     public float whistleRadius = 3.5f;
-    [SerializeField] private float baseSpriteRadius = 1.0f; // 🔹 Added missing variable
+    [SerializeField] private float baseSpriteRadius = 1.0f; // fix: Added missing variable
     public LayerMask critterLayer;
     public bool whistleActive = false;
 
