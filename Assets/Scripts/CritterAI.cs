@@ -71,4 +71,30 @@ public class CritterAI : MonoBehaviour
         rb.MovePosition(newPos);
         // (later) set facing / animation parameters 
     }
+
+    // method to help critters avoid overlapping each other
+    void AvoidNeighbors()
+    {
+        Collider2D[] neighbors = Physics2D.OverlapCircleAll(transform.position, 0.5f, LayerMask.GetMask("Critter"));
+        Vector2 repulse = Vector2.zero;
+
+        foreach (var n in neighbors)
+        {
+            if (n.gameObject == gameObject) continue;
+
+            Vector2 diff = (Vector2)transform.position - (Vector2)n.transform.position;
+            float dist = diff.magnitude;
+
+            if (dist > 0.01f)
+            {
+                repulse += diff.normalized / dist; // more push when closer
+            }
+        }
+
+        if (repulse.sqrMagnitude > 0.01f)
+        {
+            Vector2 newPos = rb.position + repulse * 0.02f; // tweak small value
+            rb.MovePosition(Vector2.MoveTowards(rb.position, newPos, moveSpeed * Time.fixedDeltaTime));
+        }
+    }
 }

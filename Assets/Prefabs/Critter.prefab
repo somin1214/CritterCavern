@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -4799910637077258919}
   - component: {fileID: 1478810267641367062}
   - component: {fileID: 5533818385897365799}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Critter
   m_TagString: Critter
   m_Icon: {fileID: 0}
